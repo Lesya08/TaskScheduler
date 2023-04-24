@@ -1,4 +1,6 @@
-public class Meeting extends Task{
+package ru.netology.task;
+
+public class Meeting extends Task {
     protected String topic;
     protected String project;
     protected String start;
@@ -20,5 +22,16 @@ public class Meeting extends Task{
 
     public String getStart() {
         return start;
+    }
+
+    @Override
+    public boolean matches(String query) {
+        if (topic.contains(query)) {
+            return true;
+        }
+        if (project.contains(query)) {
+            return true;
+        }
+        return false;
     }
 }
